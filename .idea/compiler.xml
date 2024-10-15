@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="dalian-twop-store" />
+        <module name="dalian-twop-user" />
+        <module name="dalian-twop-message" />
+        <module name="dalian-twop-system" />
+        <module name="dalian-twop-customer-service" />
+        <module name="dalian-twop-member" />
+        <module name="dalian-twop-finance" />
+        <module name="dalian-twop-report" />
+        <module name="dalian-twop-order" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="8" />
+  </component>
+</project>
