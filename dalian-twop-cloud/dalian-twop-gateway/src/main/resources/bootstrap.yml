@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8858
+        namespace: 9abe0e1d-a061-4aba-a632-1486d0a4ccf0
+        group: DEFAULT_GROUP
+        username: nacos
+        password: nacos

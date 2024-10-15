@@ -19,7 +19,7 @@
         <module>dalian-twop-report</module>
         <module>dalian-twop-message</module>
         <module>dalian-twop-system</module>
-<!--        <module>dalian-twop-gateway</module>-->
+        <module>dalian-twop-gateway</module>
     </modules>
 
     <properties>
@@ -47,6 +47,11 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-bootstrap</artifactId>
             <version>3.0.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-gateway</artifactId>
         </dependency>
 
         <!-- 引入nacos discovery 的依赖 -->

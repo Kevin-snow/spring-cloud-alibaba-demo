@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: dalian_twop_user
+          uri: lb://dalian-twop-user
+          predicates:
+            - Path=/user/**
+  main:
+    web-application-type: reactive
+  application:
+    name: dalian-twop-gateway
+server:
+  port: 80
