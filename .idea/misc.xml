@@ -12,6 +12,7 @@
         <option value="$PROJECT_DIR$/dalian-twop-cloud/dalian-twop-customer-service/pom.xml" />
         <option value="$PROJECT_DIR$/dalian-twop-cloud/dalian-twop-message/pom.xml" />
         <option value="$PROJECT_DIR$/dalian-twop-cloud/dalian-twop-system/pom.xml" />
+        <option value="$PROJECT_DIR$/dalian-twop-cloud/dalian-twop-gateway/pom.xml" />
       </list>
     </option>
   </component>

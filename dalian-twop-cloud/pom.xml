@@ -19,6 +19,7 @@
         <module>dalian-twop-report</module>
         <module>dalian-twop-message</module>
         <module>dalian-twop-system</module>
+        <module>dalian-twop-gateway</module>
     </modules>
 
     <properties>
@@ -41,6 +42,19 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <!-- 引入nacos discovery 的依赖 -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+
+        <!-- 引入nacos config 注册中心的依赖 -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
+
     </dependencies>
     <dependencyManagement>
         <dependencies>
