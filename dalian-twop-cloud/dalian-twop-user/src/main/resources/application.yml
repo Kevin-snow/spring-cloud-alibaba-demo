@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: dalian-twop-user
+server:
+  port: 8010
