@@ -2,13 +2,25 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: dalian_twop_user
+        - id: user_route
           uri: lb://dalian-twop-user
+#          uri: http://127.0.0.1:8010
           predicates:
-            - Path=/user/**
+            - Path=/dalian-twop-user/**
+          filters:
+            - StripPrefix=1
+        - id: store-route
+          uri: lb://dalian-twop-store
+          predicates:
+            - Path=/dalian-twop-store/**
+          filters:
+            - StripPrefix=1
+      discovery:
+        locator:
+          enabled: true
   main:
     web-application-type: reactive
   application:
     name: dalian-twop-gateway
 server:
-  port: 80
+  port: 8000

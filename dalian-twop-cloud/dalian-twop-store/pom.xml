@@ -6,6 +6,13 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>dalian-twop-store</name>
     <description>dalian-twop-store</description>
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
     <parent>
         <groupId>com.daliantwop.cloud</groupId>
         <artifactId>dalian-twop-cloud</artifactId>
