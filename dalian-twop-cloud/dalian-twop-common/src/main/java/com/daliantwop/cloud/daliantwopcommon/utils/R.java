@@ -39,6 +39,8 @@ public class R<T> {
         this.msg = msg;
     }
 
+
+
     public R<?> success(T data){
         return new R<>(Renum.SUCCESS.getCode(), Renum.SUCCESS.getMsg(), data);
     }

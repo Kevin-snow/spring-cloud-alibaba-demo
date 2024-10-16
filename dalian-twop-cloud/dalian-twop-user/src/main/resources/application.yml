@@ -1,5 +1,13 @@
 spring:
   application:
     name: dalian-twop-user
+#  datasource:
+#    url: ${spring.datasource.url}
+#    username: ${spring.datasource.username}
+#    password: ${spring.datasource.password}
+#    driver-class-name: ${spring.datasource.driverClassName}
 server:
   port: 8010
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml

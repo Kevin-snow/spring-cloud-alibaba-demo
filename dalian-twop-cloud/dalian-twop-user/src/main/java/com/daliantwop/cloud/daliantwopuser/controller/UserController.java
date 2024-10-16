@@ -1,18 +1,16 @@
 package com.daliantwop.cloud.daliantwopuser.controller;
 
 import com.daliantwop.cloud.daliantwopcommon.utils.R;
-import com.daliantwop.cloud.daliantwopuser.config.DataSourceConfig;
+import com.daliantwop.cloud.daliantwopuser.config.DruidConfig;
 import com.daliantwop.cloud.daliantwopuser.feign.StoreFeignService;
+import com.daliantwop.cloud.daliantwopuser.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-
-import static java.util.Arrays.asList;
 
 /**
  * @author Kevin
@@ -24,14 +22,17 @@ import static java.util.Arrays.asList;
 public class UserController {
 
 
-    private final DataSourceConfig datasourceConfig;
+    private final DruidConfig datasourceConfig;
 
     private final StoreFeignService storeFeignService;
 
-    @GetMapping("/getUser")
-    public String getUser(){
+    private final UserService userService;
 
-        return "hello world" +  datasourceConfig.getUrl() + "开启了 openFeign：" + storeFeignService.getStore();
+    @GetMapping("/getUser")
+    public R<?> getUser(){
+
+        return new R<>().success(userService.getUser());
+//        return "hello world" +  datasourceConfig.getUrl() + "开启了 openFeign：" + storeFeignService.getStore();
     }
 
     /**
