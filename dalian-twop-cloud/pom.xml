@@ -20,6 +20,7 @@
         <module>dalian-twop-message</module>
         <module>dalian-twop-system</module>
         <module>dalian-twop-gateway</module>
+        <module>dalian-twop-common</module>
     </modules>
 
     <properties>
