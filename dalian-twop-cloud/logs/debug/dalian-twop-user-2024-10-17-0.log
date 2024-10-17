@@ -1,0 +1,39 @@
+[2024-10-17 15:42:21 [main] INFO  c.a.n.c.env.SearchableProperties: properties search order:PROPERTIES->JVM->ENV->DEFAULT_SETTING
+[2024-10-17 15:42:21 [main] INFO  c.a.n.p.a.s.c.ClientAuthPluginManager: [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+[2024-10-17 15:42:21 [main] INFO  c.a.n.p.a.s.c.ClientAuthPluginManager: [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+[2024-10-17 15:42:24 [main] WARN  c.a.c.n.c.NacosPropertySourceBuilder: Ignore the empty nacos configuration and get it based on dataId[dalian-twop-user] & group[DEFAULT_GROUP]
+[2024-10-17 15:42:24 [main] WARN  c.a.c.n.c.NacosPropertySourceBuilder: Ignore the empty nacos configuration and get it based on dataId[dalian-twop-user.properties] & group[DEFAULT_GROUP]
+[2024-10-17 15:42:24 [main] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration: Located property source: [BootstrapPropertySource {name='bootstrapProperties-dalian-twop-user.properties,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-dalian-twop-user,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-order-nacos-alibaba-demo-dev.yaml,DEFAULT_GROUP'}]
+[2024-10-17 15:42:24 [main] INFO  c.d.c.d.DalianTwopUserApplication: No active profile set, falling back to 1 default profile: "default"
+[2024-10-17 15:42:25 [main] INFO  o.s.cloud.context.scope.GenericScope: BeanFactory id=091a30d8-6267-33ad-aefe-4528f9b3f2f3
+[2024-10-17 15:42:26 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8011 (http)
+[2024-10-17 15:42:26 [main] INFO  o.a.coyote.http11.Http11NioProtocol: Initializing ProtocolHandler ["http-nio-8011"]
+[2024-10-17 15:42:26 [main] INFO  o.a.catalina.core.StandardService: Starting service [Tomcat]
+[2024-10-17 15:42:26 [main] INFO  o.a.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/9.0.68]
+[2024-10-17 15:42:26 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+[2024-10-17 15:42:26 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 1860 ms
+[2024-10-17 15:42:27 [main] INFO  o.s.c.o.FeignClientFactoryBean: For 'dalian-twop-store' URL not provided. Will try picking an instance via load-balancing.
+[2024-10-17 15:42:29 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger: Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+[2024-10-17 15:42:29 [main] INFO  o.a.coyote.http11.Http11NioProtocol: Starting ProtocolHandler ["http-nio-8011"]
+[2024-10-17 15:42:29 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer: Tomcat started on port(s): 8011 (http) with context path ''
+[2024-10-17 15:42:29 [main] INFO  c.a.n.p.a.s.c.ClientAuthPluginManager: [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+[2024-10-17 15:42:29 [main] INFO  c.a.n.p.a.s.c.ClientAuthPluginManager: [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+[2024-10-17 15:42:30 [main] INFO  c.a.c.n.r.NacosServiceRegistry: nacos registry, DEFAULT_GROUP dalian-twop-user 192.168.0.58:8011 register finished
+[2024-10-17 15:42:30 [main] INFO  c.d.c.d.DalianTwopUserApplication: Started DalianTwopUserApplication in 10.626 seconds (JVM running for 11.584)
+[2024-10-17 15:42:30 [main] INFO  c.a.c.n.r.NacosContextRefresher: [Nacos Config] Listening config: dataId=dalian-twop-user, group=DEFAULT_GROUP
+[2024-10-17 15:42:30 [main] INFO  c.a.c.n.r.NacosContextRefresher: [Nacos Config] Listening config: dataId=dalian-twop-user.properties, group=DEFAULT_GROUP
+[2024-10-17 15:42:30 [main] INFO  c.a.c.n.r.NacosContextRefresher: [Nacos Config] Listening config: dataId=order-nacos-alibaba-demo-dev.yaml, group=DEFAULT_GROUP
+[2024-10-17 15:42:44 [http-nio-8011-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2024-10-17 15:42:44 [http-nio-8011-exec-1] INFO  o.s.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+[2024-10-17 15:42:44 [http-nio-8011-exec-1] INFO  o.s.web.servlet.DispatcherServlet: Completed initialization in 0 ms
+[2024-10-17 15:42:44 [http-nio-8011-exec-1] INFO  c.d.c.d.controller.UserController: hello world开启了 openFeign：store
+[2024-10-17 15:42:44 [http-nio-8011-exec-1] INFO  com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
+[2024-10-17 15:42:45 [http-nio-8011-exec-1] INFO  com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed.
+[2024-10-17 15:43:10 [Thread-13] WARN  c.a.nacos.common.notify.NotifyCenter: [NotifyCenter] Start destroying Publisher
+[2024-10-17 15:43:10 [Thread-4] WARN  c.a.n.c.http.HttpClientBeanHolder: [HttpClientBeanHolder] Start destroying common HttpClient
+[2024-10-17 15:43:10 [Thread-13] WARN  c.a.nacos.common.notify.NotifyCenter: [NotifyCenter] Destruction of the end
+[2024-10-17 15:43:10 [Thread-4] WARN  c.a.n.c.http.HttpClientBeanHolder: [HttpClientBeanHolder] Destruction of the end
+[2024-10-17 15:43:10 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry: De-registering from Nacos Server now...
+[2024-10-17 15:43:10 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry: De-registration finished.
+[2024-10-17 15:43:10 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown initiated...
+[2024-10-17 15:43:10 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown completed.
