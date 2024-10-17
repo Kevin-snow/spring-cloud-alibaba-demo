@@ -1,14 +1,16 @@
-package com.daliantwop.cloud.daliantwopcommon.utils;
+package com.daliantwop.cloud.daliantwopcommon.response;
 
 import com.daliantwop.cloud.daliantwopcommon.consts.Renum;
 import lombok.Data;
+
+import java.io.Serializable;
 
 /**
  * @author Kevin
  * @date 2024/10/16 14:03
  */
 @Data
-public class R<T> {
+public class R<T> implements Serializable {
 
     /**
      * 状态码
@@ -34,18 +36,18 @@ public class R<T> {
         this.data = data;
     }
 
-    public R(int code, String msg) {
+    public  R(int code, String msg) {
         this.code = code;
         this.msg = msg;
     }
 
 
 
-    public R<?> success(T data){
+    public static <T> R<?> success(T data){
         return new R<>(Renum.SUCCESS.getCode(), Renum.SUCCESS.getMsg(), data);
     }
 
-    public R<?> fail(){
+    public static R<?> fail(){
         return new R<>(Renum.ERROR.getCode(), Renum.ERROR.getMsg());
     }
 }
