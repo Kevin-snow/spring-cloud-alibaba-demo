@@ -1,6 +1,8 @@
 package com.daliantwop.cloud.daliantwopuser.mapper;
 
+import com.daliantwop.cloud.daliantwopuser.entity.LoginForm;
 import com.daliantwop.cloud.daliantwopuser.entity.User;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.Map;
 
@@ -10,6 +12,11 @@ import java.util.Map;
  */
 public interface UserMapper {
 
-    User selectUser();
+    /**
+     * 根据用户名查询用户信息
+     * @param loginForm
+     * @return
+     */
+    User selectUserForLogin(@Param("loginForm") LoginForm loginForm);
 
 }

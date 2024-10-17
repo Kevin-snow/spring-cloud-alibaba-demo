@@ -1,5 +1,6 @@
 package com.daliantwop.cloud.daliantwopuser.service;
 
+import com.daliantwop.cloud.daliantwopuser.entity.LoginForm;
 import com.daliantwop.cloud.daliantwopuser.entity.User;
 //import com.daliantwop.cloud.daliantwopuser.mapper.UserMapper;
 import com.daliantwop.cloud.daliantwopuser.mapper.UserMapper;
@@ -18,8 +19,8 @@ public class UserService {
     private UserMapper userMapper;
 
 
-    public User getUser() {
-        return userMapper.selectUser();
+    public User getUser(LoginForm loginForm) {
+        return userMapper.selectUserForLogin(loginForm);
 //        return null;
     }
 }

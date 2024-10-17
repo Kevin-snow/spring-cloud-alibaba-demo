@@ -9,7 +9,15 @@ public enum Renum {
 
     SUCCESS(200, "成功"),
     ERROR(500, "内部错误"),
-    NOT_FONT(404, "未找到相关内容");
+    NOT_FONT(404, "未找到相关内容"),
+    INVALID_TOKEN(407, "无效的token"),
+    EXPIRED_TOKEN(408, "过期的token"),
+    SIGNATURE_INVALID_TOKEN(409, "无效的签名"),
+    MISSION_TOKEN(501, "缺失token"),
+    REFRESH_TOKEN_INVALID(502, "刷新Token无效"),
+    UNKNOWN_ERROR(509, "未知错误"),
+    PARAMETER_ILLEGAL(400, "参数不合法")
+    ;
 
     private int code;
 

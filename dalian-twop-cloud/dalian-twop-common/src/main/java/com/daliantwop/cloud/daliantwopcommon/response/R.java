@@ -41,7 +41,13 @@ public class R<T> implements Serializable {
         this.msg = msg;
     }
 
+    public static <T> R<?> success(){
+        return new R<>(Renum.SUCCESS.getCode(), Renum.SUCCESS.getMsg());
+    }
 
+    public static <T> R<?> error(int code, String msg){
+        return new R<>(code, msg);
+    }
 
     public static <T> R<?> success(T data){
         return new R<>(Renum.SUCCESS.getCode(), Renum.SUCCESS.getMsg(), data);

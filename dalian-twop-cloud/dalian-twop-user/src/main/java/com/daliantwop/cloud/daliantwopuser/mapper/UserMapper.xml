@@ -4,9 +4,9 @@
 
     <!-- 通用查询映射结果 -->
 
-
-    <select id="selectUser" resultType="com.daliantwop.cloud.daliantwopuser.entity.User">
-        select id,name from blade_user where id = 1123598821738675201
+    <!-- 查询用户 -->
+    <select id="selectUserForLogin" resultType="com.daliantwop.cloud.daliantwopuser.entity.User">
+        select id,name from blade_user where name = #{loginForm.account} and password = #{loginForm.password}
     </select>
 
 
