@@ -5,7 +5,10 @@ import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import javax.sql.DataSource;
 
 /**
  * @author Kevin
@@ -17,25 +20,26 @@ import org.springframework.context.annotation.Configuration;
 @Data
 public class DruidConfig {
 
-    @Value("${spring.datasource.druid.url}")
+    @Value("${spring.datasource.url}")
     private String url;
 
-    @Value("${spring.datasource.druid.username}")
+    @Value("${spring.datasource.username}")
     private String username;
 
-    @Value("${spring.datasource.druid.password}")
+    @Value("${spring.datasource.password}")
     private String password;
 
-    @Value("${spring.datasource.druid.driverClassName}")
+    @Value("${spring.datasource.driver-class-name}")
     private String driverClassName;
 
-
-    public DruidDataSource dataSource() {
-        DruidDataSource dataSource = new DruidDataSource();
+    @Bean
+    public DataSource dataSource() {
+        DruidDataSource dataSource =  new DruidDataSource();
         dataSource.setUrl(url);
         dataSource.setUsername(username);
         dataSource.setPassword(password);
         dataSource.setDriverClassName(driverClassName);
+        System.out.println(username);
         return dataSource;
     }
 

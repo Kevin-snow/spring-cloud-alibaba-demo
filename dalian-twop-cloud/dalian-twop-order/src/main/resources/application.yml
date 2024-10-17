@@ -1,13 +1,16 @@
 spring:
-  cloud:
-    nacos:
-      discovery:
-        server-addr: 127.0.0.1:8858
-        namespace: 9abe0e1d-a061-4aba-a632-1486d0a4ccf0
-        group: DEFAULT_GROUP
-        username: nacos
-        password: nacos
   application:
-    name: dalian-twop-order
+    name: dalian-twop-report
+  datasource:
+    url: ${spring.datasource.druid.url}
+    username: ${spring.datasource.druid.username}
+    password: ${spring.datasource.druid.password}
+    driver-class-name: ${spring.datasource.druid.driverClassName}
+  main:
+    allow-bean-definition-overriding: true
+
 server:
-  port: 8030
+  port: 8060
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml

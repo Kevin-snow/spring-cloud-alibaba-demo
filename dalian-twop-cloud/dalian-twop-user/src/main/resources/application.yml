@@ -1,13 +1,17 @@
 spring:
   application:
     name: dalian-twop-user
-#  datasource:
-#    url: ${spring.datasource.url}
-#    username: ${spring.datasource.username}
-#    password: ${spring.datasource.password}
-#    driver-class-name: ${spring.datasource.driverClassName}
+  datasource:
+    url: ${spring.datasource.druid.url}
+    username: ${spring.datasource.druid.username}
+    password: ${spring.datasource.druid.password}
+    driver-class-name: ${spring.datasource.druid.driverClassName}
+  main:
+    allow-bean-definition-overriding: true
+
 server:
-  port: 8010
+  port: 8011
+
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml

@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: dalian-twop-report
+  datasource:
+    url: ${spring.datasource.druid.url}
+    username: ${spring.datasource.druid.username}
+    password: ${spring.datasource.druid.password}
+    driver-class-name: ${spring.datasource.druid.driverClassName}
+  main:
+    allow-bean-definition-overriding: true
+
+server:
+  port: 8080
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml

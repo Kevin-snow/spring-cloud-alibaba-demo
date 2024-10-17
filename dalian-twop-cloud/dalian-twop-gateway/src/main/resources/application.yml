@@ -20,7 +20,14 @@ spring:
           enabled: true
   main:
     web-application-type: reactive
+    allow-bean-definition-overriding: true
+  datasource:
+    url: ${spring.datasource.druid.url}
+    username: ${spring.datasource.druid.username}
+    password: ${spring.datasource.druid.password}
+    driver-class-name: ${spring.datasource.druid.driverClassName}
   application:
     name: dalian-twop-gateway
 server:
   port: 8000
+

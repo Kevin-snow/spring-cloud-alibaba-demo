@@ -22,7 +22,7 @@ import java.util.List;
 public class UserController {
 
 
-    private final DruidConfig datasourceConfig;
+//    private final DruidConfig datasourceConfig;
 
     private final StoreFeignService storeFeignService;
 
@@ -30,9 +30,9 @@ public class UserController {
 
     @GetMapping("/getUser")
     public R<?> getUser(){
-
+//        datasourceConfig.getUrl() +
         return new R<>().success(userService.getUser());
-//        return "hello world" +  datasourceConfig.getUrl() + "开启了 openFeign：" + storeFeignService.getStore();
+//        return  new R<>().success("hello world" +  "开启了 openFeign：" + storeFeignService.getStore());
     }
 
     /**

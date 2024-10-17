@@ -1,6 +1,7 @@
 package com.daliantwop.cloud.daliantwopuser.service;
 
 import com.daliantwop.cloud.daliantwopuser.entity.User;
+//import com.daliantwop.cloud.daliantwopuser.mapper.UserMapper;
 import com.daliantwop.cloud.daliantwopuser.mapper.UserMapper;
 import org.springframework.stereotype.Service;
 
@@ -19,5 +20,6 @@ public class UserService {
 
     public User getUser() {
         return userMapper.selectUser();
+//        return null;
     }
 }
