@@ -6,6 +6,13 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>dalian-twop-user</name>
     <description>dalian-twop-user</description>
+
+    <parent>
+        <groupId>com.daliantwop.cloud</groupId>
+        <artifactId>dalian-twop-cloud</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
     <dependencies>
 
         <dependency>
@@ -25,11 +32,7 @@
             <artifactId>spring-cloud-starter-loadbalancer</artifactId>
         </dependency>
     </dependencies>
-    <parent>
-        <groupId>com.daliantwop.cloud</groupId>
-        <artifactId>dalian-twop-cloud</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
-    </parent>
+
 
 
     <build>

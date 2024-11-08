@@ -21,6 +21,7 @@
         <module>dalian-twop-system</module>
         <module>dalian-twop-gateway</module>
         <module>dalian-twop-common</module>
+        <module>dalian-twop-database</module>
     </modules>
 
     <properties>
