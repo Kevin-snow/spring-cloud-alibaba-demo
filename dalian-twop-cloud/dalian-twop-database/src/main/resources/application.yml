@@ -1,0 +1,21 @@
+spring:
+  application:
+    #配置服务名
+    name: dalian-twop-database
+  #配置数据源，此处的#{}对应的是nacos中配置的key，此处的key，对应的是druidconfig类中的变量
+  datasource:
+    url: ${spring.datasource.druid.url}
+    username: ${spring.datasource.druid.username}
+    password: ${spring.datasource.druid.password}
+    driver-class-name: ${spring.datasource.druid.driverClassName}
+  #springboot与springcloud 整合时，datasource重复定义，所以需要此配置
+  main:
+    allow-bean-definition-overriding: true
+#服务端口号
+server:
+  port: 8011
+#扫描mapper接口
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+logging:
+  config: classpath:logback-spring.xml
