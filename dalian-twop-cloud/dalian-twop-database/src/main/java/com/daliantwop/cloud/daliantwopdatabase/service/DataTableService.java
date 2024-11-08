@@ -11,6 +11,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 /**
@@ -19,6 +20,8 @@ import java.util.List;
  */
 @Service
 public class DataTableService {
+
+    String year = LocalDate.now().getYear() + "";
 
     @Autowired
     JdbcTemplate jdbcTemplate;
@@ -35,8 +38,7 @@ public class DataTableService {
 
         // 拼接sql语句
         StringBuilder createTableSql = new StringBuilder();
-
-        createTableSql.append("create table ").append(tableEnName + ).append("(\r\n");
+        createTableSql.append("create table ").append(tableEnName).append("_").append(year).append("(\r\n");
         String fieldSql = getFieldSql(columns);
         createTableSql.append(fieldSql);
         createTableSql.append("\r\n)");
