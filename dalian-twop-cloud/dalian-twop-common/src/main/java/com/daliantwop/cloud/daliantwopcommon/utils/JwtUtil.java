@@ -74,8 +74,7 @@ public class JwtUtil {
      */
     public static String getUserInfo(String token) {
         DecodedJWT decodedJWT = JWT.decode(token);
-        String username = decodedJWT.getClaim("username").asString();
-        return username;
+        return decodedJWT.getClaim("userName").asString();
     }
 
 }

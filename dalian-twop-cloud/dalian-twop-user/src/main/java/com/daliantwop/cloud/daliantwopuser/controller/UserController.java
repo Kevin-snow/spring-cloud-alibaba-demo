@@ -1,13 +1,12 @@
 package com.daliantwop.cloud.daliantwopuser.controller;
 
 import com.daliantwop.cloud.daliantwopcommon.response.R;
+import com.daliantwop.cloud.daliantwopuser.entity.LoginForm;
 import com.daliantwop.cloud.daliantwopuser.feign.StoreFeignService;
 import com.daliantwop.cloud.daliantwopuser.service.UserService;
-import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,20 +17,19 @@ import java.util.List;
  */
 @Slf4j
 @RestController
-@AllArgsConstructor
 @RequestMapping("/user")
 public class UserController {
 
-    private final StoreFeignService storeFeignService;
+    @Autowired
+    private StoreFeignService storeFeignService;
 
-    private final UserService userService;
+    @Autowired
+    private UserService userService;
 
-    @GetMapping("/getUser")
-    public R<?> getUser(){
-//        datasourceConfig.getUrl() +
-        log.info("hello world" +  "开启了 openFeign：" + storeFeignService.getStore());
-        return R.success(userService.getUser());
-//        return  new R<>().success("hello world" +  "开启了 openFeign：" + storeFeignService.getStore());
+    @PostMapping("/getUser")
+    public R<?> getUser(@RequestBody LoginForm loginForm){
+        log.info("hello world" +  "开启了 openFeign：{}" , storeFeignService.getStore());
+        return R.success(userService.getUser(loginForm));
     }
 
     /**

@@ -37,24 +37,22 @@ public class LoginController {
     private StringRedisTemplate stringRedisTemplate;
 
     @PostMapping("/login")
-    public R<?> login(@RequestBody LoginForm loginForm, BindingResult result){
-        if (result.hasErrors()){
-            return R.error(Renum.PARAMETER_ILLEGAL.getCode(), result.getFieldError().getDefaultMessage());
+    public R<?> login(@RequestBody LoginForm loginForm, BindingResult result) {
+
+        if (result.hasErrors()) {
+            return R.error(Renum.PARAMETER_ILLEGAL.getCode(), Objects.requireNonNull(result.getFieldError()).getDefaultMessage());
         }
 
         User user = userService.getUser(loginForm);
-
-        if (Objects.isNull(user)){
-
+        if (!Objects.isNull(user)) {
             //生成token
-            String token = JwtUtil.generateToken(user.getName(), secretKey);
+            String token = JwtUtil.generateToken(user.getUserName(), secretKey);
 
             //  生成刷新Token
             String refreshToken = UUID.randomUUID().toString().replace("-", "");
 
             //将信息放入缓存
             HashOperations<String, String, String> hashOperations = stringRedisTemplate.opsForHash();
-
             hashOperations.put(loginForm.getAccount(), "token", token);
             hashOperations.put(loginForm.getAccount(), "refreshToken", refreshToken);
             stringRedisTemplate.expire(loginForm.getAccount(), JwtUtil.TOKEN_EXPIRE_TIME, TimeUnit.MILLISECONDS);

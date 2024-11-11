@@ -4,7 +4,6 @@ spring:
       routes:
         - id: user_route
           uri: lb://dalian-twop-user
-#          uri: http://127.0.0.1:8010
           predicates:
             - Path=/dalian-twop-user/**
           filters:
