@@ -13,7 +13,7 @@ spring:
     allow-bean-definition-overriding: true
 #服务端口号
 server:
-  port: 8011
+  port: 8012
 #扫描mapper接口
 mybatis:
   mapper-locations: classpath:mapper/*.xml

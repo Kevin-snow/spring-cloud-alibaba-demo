@@ -1,8 +1,11 @@
 package com.daliantwop.cloud.daliantwopdatabase.service;
 
+import com.daliantwop.cloud.daliantwopcommon.consts.Renum;
+import com.daliantwop.cloud.daliantwopcommon.response.R;
 import com.daliantwop.cloud.daliantwopdatabase.consts.SchemaConst;
 import com.daliantwop.cloud.daliantwopdatabase.consts.TableEnum;
 import com.daliantwop.cloud.daliantwopdatabase.entity.ColumnEntity;
+import com.daliantwop.cloud.daliantwopdatabase.mapper.DataTableMapper;
 import com.mysql.cj.xdevapi.Column;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +14,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -22,6 +26,11 @@ import java.util.List;
 public class DataTableService {
 
     String year = LocalDate.now().getYear() + "";
+
+    @Resource
+    DataTableMapper dataTableMapper;
+
+
 
     @Autowired
     JdbcTemplate jdbcTemplate;
@@ -96,5 +105,11 @@ public class DataTableService {
         return stringSql.toString();
     }
 
-
+    public R<?> createTable(){
+        int existTable = dataTableMapper.existTable("user_2024");
+        if (existTable == 0){
+            dataTableMapper.createTable("user_2024");
+        }
+        return new R<>(Renum.SUCCESS.getCode(), "创建成功");
+    }
 }

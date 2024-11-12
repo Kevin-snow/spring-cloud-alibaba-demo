@@ -12,6 +12,23 @@
         <result column="COLUMN_COMMENT" property="columnComment" />
     </resultMap>
 
+    <select id="existTable" resultType="int" parameterType="java.lang.String">
+        SELECT COUNT(*) FROM information_schema.TABLES WHERE TABLE_NAME = #{tableName}
+    </select>
+
+    <update id="createTable" parameterType="String">
+        CREATE TABLE ${tableName} (
+        id int(11) NOT NULL AUTO_INCREMENT COMMENT '主键ID',
+        create_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+        update_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+        name varchar(30) NOT NULL COMMENT '姓名',
+        age int(11) DEFAULT NULL COMMENT '年龄',
+        email varchar(50) DEFAULT NULL COMMENT '邮箱',
+        address varchar(50) DEFAULT NULL COMMENT '地址',
+        PRIMARY KEY (id)
+        ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 comment='用户表';
+    </update>
+
     <!-- 查询数据库表字段信息 -->
     <select id="selectTableColumns" parameterType="java.lang.String" resultMap="dataTableMap">
         Select
