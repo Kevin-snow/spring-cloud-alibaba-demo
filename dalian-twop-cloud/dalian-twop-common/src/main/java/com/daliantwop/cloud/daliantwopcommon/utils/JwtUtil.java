@@ -13,6 +13,7 @@ import com.daliantwop.cloud.daliantwopcommon.exption.TokenAuthenticationExceptio
 import java.util.Date;
 
 /**
+ * Token工具类
  * @author Kevin
  * @date 2024/10/17 16:51
  */
@@ -27,8 +28,8 @@ public class JwtUtil {
      * 生成Token
      *
      * @param username  用户标识（不一定是用户名，有可能是用户ID或者手机号什么的）
-     * @param secretKey
-     * @return
+     * @param secretKey 密钥
+     * @return token
      */
     public static String generateToken(String username, String secretKey) {
         Algorithm algorithm = Algorithm.HMAC256(secretKey);
@@ -46,9 +47,8 @@ public class JwtUtil {
     /**
      * 校验Token
      *
-     * @param token
-     * @param secretKey
-     * @return
+     * @param token token
+     * @param secretKey 密钥
      */
     public static void verifyToken(String token, String secretKey) throws TokenAuthenticationException {
         try {
@@ -69,8 +69,8 @@ public class JwtUtil {
     /**
      * 从Token中提取用户信息
      *
-     * @param token
-     * @return
+     * @param token token
+     * @return 用户标识
      */
     public static String getUserInfo(String token) {
         DecodedJWT decodedJWT = JWT.decode(token);

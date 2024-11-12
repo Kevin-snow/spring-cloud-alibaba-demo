@@ -6,6 +6,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
+ * 响应类
  * @author Kevin
  * @date 2024/10/16 14:03
  */
